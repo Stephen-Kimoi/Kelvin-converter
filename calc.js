@@ -34,6 +34,9 @@ function calculateResults() {
        // Show results 
        document.getElementById('results').style.display = 'block'; 
 
+       // Show reset button
+       document.getElementById('reset').style.display = 'block'; 
+
        celcius.value = celciusValue.toFixed(2);  
 
     } else {
@@ -41,6 +44,18 @@ function calculateResults() {
     }
 
 } 
+
+// Reset button
+document.getElementById('reset-button').addEventListener('click', function(e) { 
+    // Clear the kelvin value input 
+    document.getElementById('kelvin-value').value = ''; 
+    document.getElementById('celcius-value').value = ''; 
+    
+    // Hide the resuslts div and the reset button
+    document.getElementById('results').style.display = 'none'; 
+
+    e.preventDefault(); 
+})
 
 // ShowError function 
 function showError(error) {
